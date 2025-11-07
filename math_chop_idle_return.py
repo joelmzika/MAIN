@@ -109,16 +109,11 @@ class MathChopIdleReturn:
             
         # Only apply return after delay period
         if self.inactive_frames >= self.activation_delay:
-            # Apply smooth interpolation to all channels
-            for chan_idx in range(chop.numChans):
-                if chop.numSamples > 0:
-                    current_val = chop[chan_idx][0]
-                    # Lerp towards target value
-                    new_val = current_val + (self.target_value - current_val) * self.return_speed
-                    
-                    # Use Math CHOP's expression or modify via script
-                    # Note: Direct modification may require a different approach
-                    # This is a reference implementation
+            # Note: This method provides the calculation logic.
+            # For actual CHOP modification, use get_return_value() in a Script CHOP
+            # or integrate with a chopexec DAT. Direct CHOP modification from external
+            # Python is not supported - use script_chop_idle_return.py instead for
+            # a complete working implementation.
                     
     def get_return_value(self, current_value):
         """

@@ -119,12 +119,16 @@ Value     Value     Value
 
 ### Activity Threshold Effect
 ```
-threshold = 0.0001     threshold = 0.001      threshold = 0.01
-(very sensitive)       (normal)               (less sensitive)
+threshold = 0.0001          threshold = 0.001           threshold = 0.01
+(HIGH sensitivity)          (MEDIUM sensitivity)        (LOW sensitivity)
+Detects: ±0.0001 or more   Detects: ±0.001 or more    Detects: ±0.01 or more
 
-Detects tiny changes   Balanced detection     Ignores small changes
-Good for precise       Good for most cases    Good for noisy inputs
-control                                       or deliberate motion
+Detects tiny changes        Balanced detection          Ignores small changes
+Good for precise            Good for most cases         Good for noisy inputs
+control & clean signals     Standard responsiveness     or deliberate motion only
+
+Example: Mouse precision    Example: General UI         Example: Audio input with
+         Exact sensor data           Touch/gesture               background noise
 ```
 
 ### Inactivity Delay Effect
